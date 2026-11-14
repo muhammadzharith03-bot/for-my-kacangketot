@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Nur Kasih ♡</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: Georgia, serif; background: #fff0f5; color: #713d51; }
+    nav {
+      position: fixed; top: 0; width: 100%; padding: 18px 5%;
+      background: rgba(255,255,255,.88); backdrop-filter: blur(10px);
+      display: flex; justify-content: space-between; align-items: center; z-index: 100;
+    }
+    nav h3 { color: #d65d88; }
+    nav a { text-decoration: none; color: #a44d70; margin-left: 15px; font-size: 13px; }
+    section {
+      min-height: 100vh; padding: 110px 20px 60px; display: flex;
+      flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; scroll-margin-top: 50px;
+    }
+    .hero { background: linear-gradient(135deg, #ffe0eb, #fff5f8); }
+    h1 { font-size: clamp(38px, 7vw, 65px); color: #c34d7a; margin: 20px 0; }
+    h2 { font-size: 35px; color: #c34d7a; margin-bottom: 25px; }
+    p { max-width: 600px; line-height: 1.8; font-size: 17px; }
+    .eyebrow { letter-spacing: 4px; text-transform: uppercase; font-size: 12px; color: #d47c9d; }
+    button {
+      border: 0; padding: 14px 27px; border-radius: 30px; background: #d65d88;
+      color: white; font-size: 15px; cursor: pointer; margin: 15px 5px; transition: .3s;
+    }
+    button:hover { background: #a93d68; transform: translateY(-3px); }
+    #musicButton {
+      position: fixed; bottom: 20px; right: 20px; z-index: 200;
+      box-shadow: 0 5px 15px #d65d8860;
+    }
+    .memories { background: #fff7fa; }
+    .photo {
+      width: min(280px, 80vw); height: 330px; object-fit: cover;
+      border-radius: 20px; margin: 25px 15px; box-shadow: 0 8px 25px #d65d8830;
+    }
+    .letter { background: #ffe6ef; }
+    .letter-box {
+      max-width: 650px; padding: 35px; background: white; border-radius: 20px;
+      box-shadow: 0 8px 30px #d65d8820;
+    }
+    .ending { background: linear-gradient(135deg, #f8c6d8, #fff0f5); }
+    footer { padding: 20px; text-align: center; background: #fff7fa; font-size: 13px; }
+    .heart {
+      position: fixed; bottom: -20px; color: #e88cab; pointer-events: none;
+      animation: floatUp 6s linear forwards; z-index: 1;
+    }
+    @keyframes floatUp {
+      to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    }
+    @media (max-width: 560px) {
+      nav { padding: 14px 4%; }
+      nav a { margin-left: 8px; font-size: 11px; }
+      nav h3 { font-size: 15px; }
+      h2 { font-size: 29px; }
+      .letter-box { padding: 25px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h3>♡ For Nur Kasih</h3>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#memories">Memories</a>
+      <a href="#letter">Letter</a>
+      <a href="#ending">Ending</a>
+    </div>
+  </nav>
+
+  <!-- Put your music file in this folder and name it song.mp3 -->
+  <audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+  <button id="musicButton" onclick="toggleMusic()">♫ Play Music</button>
+
+  <section class="hero" id="home">
+    <div class="eyebrow">A little corner of my universe</div>
+    <h1>Happy Birthday,<br>Nur Kasih ♡</h1>
+    <p>
+      To the girl who makes my ordinary days feel extraordinary.
+      You are my favourite person and my happiest reason to smile.
+    </p>
+    <button onclick="scrollToSection('memories')">Discover Our Story ↓</button>
+  </section>
+
+  <section class="memories" id="memories">
+    <div class="eyebrow">Our beautiful moments</div>
+    <h2>Little Memories ♡</h2>
+    <p>
+      Every picture tells a story. Every moment with you becomes
+      a memory I want to keep forever.
+    </p>
+    <!-- Replace photo1.jpg with the name of your own photo file -->
+    <img src="photo1.jpg" class="photo" alt="Our memory">
+    <p>My favourite memories are the ones with you.</p>
+    <button onclick="scrollToSection('letter')">Read My Letter ↓</button>
+  </section>
+
+  <section class="letter" id="letter">
+    <div class="eyebrow">Words from my heart</div>
+    <h2>Dear My Love 💌</h2>
+    <div class="letter-box">
+      <p>
+        My dearest Nur Kasih,<br><br>
+        Thank you for coming into my life. You make my days brighter
+        and my heart happier.<br><br>
+        I may not be perfect, but I promise to keep learning, growing
+        and becoming a better person for myself and for us.<br><br>
+        I hope you always remember how special you are to me.<br><br>
+        I love you, always and forever.<br><br>
+        With all my love,<br>
+        Your favourite person ♡
+      </p>
+    </div>
+    <button onclick="scrollToSection('ending')">One Last Thing ♡</button>
+  </section>
+
+  <section class="ending" id="ending">
+    <div class="eyebrow">And finally...</div>
+    <h1>I Love You ♡</h1>
+    <p>
+      Happy Birthday, my love. May your life always be filled with
+      happiness, beautiful memories and endless love.
+    </p>
+    <p style="margin-top:25px;">Forever yours. ❤️</p>
+    <button onclick="scrollToSection('home')">Back to Beginning ↑</button>
+  </section>
+
+  <footer>Made with love, especially for Nur Kasih ♡</footer>
+
+  <script>
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    }
+
+    const music = document.getElementById("bgMusic");
+    const musicButton = document.getElementById("musicButton");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play().then(() => {
+          musicButton.textContent = "♫ Pause Music";
+        }).catch(() => {
+          alert("Please make sure song.mp3 is in the same folder as index.html.");
+        });
+      } else {
+        music.pause();
+        musicButton.textContent = "♫ Play Music";
+      }
+    }
+
+    music.addEventListener("ended", () => {
+      musicButton.textContent = "♫ Play Music";
+    });
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "♥";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (15 + Math.random() * 20) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 800);
+  </script>
+</body>
+</html>
